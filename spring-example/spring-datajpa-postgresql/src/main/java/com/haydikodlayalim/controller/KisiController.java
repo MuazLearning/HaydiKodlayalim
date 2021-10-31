@@ -11,7 +11,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/kullanici")
+@RequestMapping("/kisi")
 @RequiredArgsConstructor
 public class KisiController {
 
