@@ -21,6 +21,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor // KisiRepository için otomatik constructor oluşturur.
 public class KisiServiceImpl implements KisiService {
 
+    /*
+        @Component
+        @Service
+        @RestController
+        @Controller
+        @Repository
+    */
     private final KisiRepository kisiRepository;
     private final AdresRepository adresRepository;
 

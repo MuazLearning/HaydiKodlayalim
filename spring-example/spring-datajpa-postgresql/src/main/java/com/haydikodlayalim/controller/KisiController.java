@@ -1,11 +1,12 @@
 package com.haydikodlayalim.controller;
 
 import com.haydikodlayalim.dto.KisiDto;
-import com.haydikodlayalim.entity.Kisi;
 import com.haydikodlayalim.service.KisiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class KisiController {
     private final KisiService kisiService;
 
     @PostMapping()
-    public ResponseEntity<KisiDto> kaydet(@RequestBody KisiDto kisiDto) {
+    public ResponseEntity<KisiDto> kaydet(@Valid @RequestBody KisiDto kisiDto) {
         return ResponseEntity.ok(kisiService.save(kisiDto));
     }
 
