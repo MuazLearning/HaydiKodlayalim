@@ -1,0 +1,22 @@
+type Vehicle { # "type" geri dönüş alınan nesneler
+    id: ID!,
+    type: String!,
+    modelCode: String,
+    brandName: String,
+    launchDate: String
+}
+
+input VehicleDto { # "Input" sunucunun kabuş ettiği nesneler
+    type: String!,
+    modelCode: String!,
+    brandName: String
+}
+
+type Query {
+    getVehicles(type: String):[Vehicle] # "[]" içinde olunca array olarak döner.
+    getById(id: ID):Vehicle
+}
+
+type Mutation {
+    createVehicle(vehicle: VehicleDto):Vehicle # Tek bir nesne
+}
