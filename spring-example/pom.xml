@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>spring-boot1-hello-world</module>
+        <module>spring-boot1-helloworld</module>
         <module>spring-boot2-mongo-rest-api</module>
         <module>spring-boot3-elasticsearch</module>
         <module>spring-boot4-datajpa-postgresql</module>
@@ -24,6 +24,7 @@
         <module>spring-boot12-websocket</module>
         <module>spring-boot13-pagination</module>
         <module>spring-boot14-events</module>
+        <module>spring-boot15-mongo-gridfs-fileupload</module>
     </modules>
 
     <properties>
