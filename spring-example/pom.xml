@@ -23,6 +23,7 @@
         <module>spring-boot11-redis-cache</module>
         <module>spring-boot12-websocket</module>
         <module>spring-boot13-pagination</module>
+        <module>spring-boot14-events</module>
     </modules>
 
     <properties>
