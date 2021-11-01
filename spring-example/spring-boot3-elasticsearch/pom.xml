@@ -11,7 +11,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-elasticsearch</artifactId>
+    <artifactId>spring-boot3-elasticsearch</artifactId>
 
     <dependencies>
         <dependency>

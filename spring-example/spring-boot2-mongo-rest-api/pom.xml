@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-mongo-rest-api</artifactId>
+    <artifactId>spring-boot2-mongo-rest-api</artifactId>
     <groupId>com.haydikodlayalim</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo</name>
