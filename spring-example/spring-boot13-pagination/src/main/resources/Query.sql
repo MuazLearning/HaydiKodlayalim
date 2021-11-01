@@ -1,0 +1,20 @@
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (1, 'Test Author 1', 'Test Isbn 1', '2001-01-01', 'Test Kitap 1');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (2, 'Test Author 2', 'Test Isbn 2', '2001-02-01', 'Test Kitap 2');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (3, 'Test Author 3', 'Test Isbn 3', '2001-03-01', 'Test Kitap 3');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (4, 'Test Author 4', 'Test Isbn 4', '2001-04-01', 'Test Kitap 4');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (5, 'Test Author 5', 'Test Isbn 1', '2001-01-01', 'Test Kitap 1');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (6, 'Test Author 6', 'Test Isbn 2', '2001-02-01', 'Test Kitap 2');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (7, 'Test Author 7', 'Test Isbn 3', '2001-03-01', 'Test Kitap 3');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (8, 'Test Author 8', 'Test Isbn 4', '2001-04-01', 'Test Kitap 4');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (9, 'Test Author 35', 'Test Isbn 1', '2001-01-01', 'Test Kitap 1');
+INSERT INTO BOOKS (ID, AUTHOR, ISBN, PUBLISH_DATE, TITLE)
+VALUES (10, 'Test Author 10', 'Test Isbn 1', '2001-01-01', 'Test Kitap 1');
