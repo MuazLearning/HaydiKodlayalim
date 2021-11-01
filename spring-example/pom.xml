@@ -20,6 +20,7 @@
         <module>spring-boot-aop</module>
         <module>spring-boot-graphQL</module>
         <module>spring-boot-rest-template</module>
+        <module>spring-boot-redis-cache</module>
     </modules>
 
     <properties>
