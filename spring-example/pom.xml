@@ -25,6 +25,7 @@
         <module>spring-boot13-pagination</module>
         <module>spring-boot14-events</module>
         <module>spring-boot15-mongo-gridfs-fileupload</module>
+        <module>spring-boot-16-kafka</module>
     </modules>
 
     <properties>
