@@ -30,6 +30,7 @@
         <module>spring-boot18-versioning</module>
         <module>spring-boot19-exception-handling</module>
         <module>spring-boot20-hazelcast-cache</module>
+        <module>spring-boot21-webflux-mongo</module>
     </modules>
 
     <properties>
