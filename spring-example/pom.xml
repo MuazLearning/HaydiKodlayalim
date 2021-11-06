@@ -31,6 +31,7 @@
         <module>spring-boot19-exception-handling</module>
         <module>spring-boot20-hazelcast-cache</module>
         <module>spring-boot21-webflux-mongo</module>
+        <module>spring-boot22-logging</module>
     </modules>
 
     <properties>

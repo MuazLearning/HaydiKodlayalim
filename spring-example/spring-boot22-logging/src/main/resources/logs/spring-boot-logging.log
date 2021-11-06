@@ -1,0 +1,14 @@
+2021-11-06 18:09:49,140 INFO org.springframework.boot.StartupInfoLogger [main] Starting LogApplication using Java 11.0.13 on MONSTER with PID 16992 (D:\Github\BackEnd\Java\HK-Java-SpringBoot\spring-example\spring-boot22-logging\target\classes started by MONSTER in D:\Github\BackEnd\Java\HK-Java-SpringBoot\spring-example)
+2021-11-06 18:09:49,141 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2021-11-06 18:09:49,538 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-11-06 18:09:49,542 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-11-06 18:09:49,542 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-06 18:09:49,588 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-11-06 18:09:49,588 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 421 ms
+2021-11-06 18:09:49,746 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-06 18:09:49,752 INFO org.springframework.boot.StartupInfoLogger [main] Started LogApplication in 0.869 seconds (JVM running for 1.344)
+2021-11-06 18:09:55,239 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-06 18:09:55,240 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-11-06 18:09:55,241 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 0 ms
+2021-11-06 18:09:55,252 INFO com.haydikodlayalim.logging.api.LogEndPoint [http-nio-8080-exec-1] get details methodu basladi
+2021-11-06 18:09:55,253 DEBUG com.haydikodlayalim.logging.api.LogEndPoint [http-nio-8080-exec-1] internalLogDetail methodu basladi
