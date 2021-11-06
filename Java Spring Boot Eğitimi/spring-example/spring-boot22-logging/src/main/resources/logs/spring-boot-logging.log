@@ -1,0 +1,14 @@
+2021-11-06 18:24:23,856 INFO org.springframework.boot.StartupInfoLogger [main] Starting LogApplication using Java 11.0.13 on MONSTER with PID 6508 (D:\Github\BackEnd\Java\HK-Java-SpringBoot\Java Spring Boot Eğitimi\spring-example\spring-boot22-logging\target\classes started by MONSTER in D:\Github\BackEnd\Java\HK-Java-SpringBoot\Java Spring Boot Eğitimi\spring-example)
+2021-11-06 18:24:23,857 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2021-11-06 18:24:24,399 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2021-11-06 18:24:24,405 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-11-06 18:24:24,406 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-06 18:24:24,470 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-11-06 18:24:24,470 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 586 ms
+2021-11-06 18:24:24,669 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2021-11-06 18:24:24,676 INFO org.springframework.boot.StartupInfoLogger [main] Started LogApplication in 1.155 seconds (JVM running for 1.731)
+2021-11-06 18:24:34,096 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-06 18:24:34,098 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-11-06 18:24:34,099 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2021-11-06 18:24:34,112 INFO com.haydikodlayalim.logging.api.LogEndPoint [http-nio-8080-exec-1] get details methodu basladi
+2021-11-06 18:24:34,112 DEBUG com.haydikodlayalim.logging.api.LogEndPoint [http-nio-8080-exec-1] internalLogDetail methodu basladi
