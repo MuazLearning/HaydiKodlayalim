@@ -2,22 +2,22 @@ package com.haydikodlayalim.accountservice.api;
 
 import com.haydikodlayalim.accountservice.entity.Account;
 import com.haydikodlayalim.accountservice.service.AccountService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("account")
+import java.util.List;
+
 /**
  * localhost:8080/account
  * GET PUT POST DELETE
  */
+@RestController
+@RequestMapping("account")
+@RequiredArgsConstructor
 public class AccountApi {
 
     private final AccountService accountService;
-
-    public AccountApi(AccountService accountService) {
-        this.accountService = accountService;
-    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Account> get(@PathVariable("id") String id) {
@@ -39,4 +39,8 @@ public class AccountApi {
         accountService.delete(id);
     }
 
+    @GetMapping
+    public ResponseEntity<List<Account>> getAll() {
+        return ResponseEntity.ok(accountService.findAll());
+    }
 }
