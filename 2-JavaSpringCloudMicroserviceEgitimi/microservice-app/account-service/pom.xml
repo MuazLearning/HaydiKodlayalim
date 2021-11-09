@@ -5,17 +5,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.6</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<artifactId>service-parent</artifactId>
+		<groupId>com.haydikodlayalim</groupId>
+		<version>10.0.1</version>
+		<relativePath>../service-parent/pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.haydikodlayalim</groupId>
 	<artifactId>account-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>10.0.1</version>
 	<name>account-service</name>
-	<description>Account Service</description>
+	<description>Account Service </description>
 
 	<properties>
 		<java.version>11</java.version>
@@ -32,17 +32,22 @@
 			<version>3.0.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
+			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 
