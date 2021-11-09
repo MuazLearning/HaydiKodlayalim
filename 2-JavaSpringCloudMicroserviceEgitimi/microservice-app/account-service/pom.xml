@@ -8,8 +8,8 @@
 		<artifactId>service-parent</artifactId>
 		<groupId>com.haydikodlayalim</groupId>
 		<version>10.0.1</version>
-		<relativePath>../service-parent/pom.xml</relativePath>
-	</parent>
+        <relativePath/>
+    </parent>
 
 	<groupId>com.haydikodlayalim</groupId>
 	<artifactId>account-service</artifactId>
