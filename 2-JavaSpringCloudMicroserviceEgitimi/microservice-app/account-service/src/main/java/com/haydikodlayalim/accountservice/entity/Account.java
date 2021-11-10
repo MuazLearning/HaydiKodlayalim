@@ -3,6 +3,7 @@ package com.haydikodlayalim.accountservice.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -29,8 +30,20 @@ public class Account implements Serializable {
     private String username;
 
     @Setter
+    @Column(value = "name")
+    private String name;
+
+    @Setter
+    @Column(value = "surname")
+    private String surname;
+
+    @Setter
     @Column(value = "email")
     private String email;
+
+    @Setter
+    @Column(value = "birth_date")
+    private Date birthDate;
 
     @Setter
     @Column(value = "pwd")
