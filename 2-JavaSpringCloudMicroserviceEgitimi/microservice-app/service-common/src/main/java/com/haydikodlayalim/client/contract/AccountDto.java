@@ -1,4 +1,4 @@
-package com.haydikodlayalim.accountservice.dto;
+package com.haydikodlayalim.client.contract;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,4 +22,8 @@ public class AccountDto {
     private String email;
 
     private Date birthDate;
+
+    public String getFullName() {
+        return name + " " + surname;
+    }
 }

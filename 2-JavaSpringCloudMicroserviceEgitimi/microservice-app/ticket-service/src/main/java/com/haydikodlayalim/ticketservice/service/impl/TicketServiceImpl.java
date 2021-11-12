@@ -1,5 +1,7 @@
 package com.haydikodlayalim.ticketservice.service.impl;
 
+import com.haydikodlayalim.client.AccountServiceClient;
+import com.haydikodlayalim.client.contract.AccountDto;
 import com.haydikodlayalim.ticketservice.dto.TicketDto;
 import com.haydikodlayalim.ticketservice.model.PriorityType;
 import com.haydikodlayalim.ticketservice.model.Ticket;
@@ -12,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +25,7 @@ public class TicketServiceImpl implements TicketService {
     private final TicketElasticRepository ticketElasticRepository;
     private final TicketRepository ticketRepository;
     private final ModelMapper modelMapper;
+    private final AccountServiceClient accountServiceClient;
 
     @Override
     @Transactional
@@ -30,6 +34,7 @@ public class TicketServiceImpl implements TicketService {
         Ticket ticket = new Ticket();
         //TODO Account API dan dogrula
         // ticket.setAssignee();
+        ResponseEntity<AccountDto> accountDtoResponseEntity = accountServiceClient.get(ticketDto.getAssignee());
 
         if (ticketDto.getDescription() == null)
             throw new IllegalArgumentException("Description bos olamaz");
@@ -39,6 +44,7 @@ public class TicketServiceImpl implements TicketService {
         ticket.setTicketDate(ticketDto.getTicketDate());
         ticket.setTicketStatus(TicketStatus.valueOf(ticketDto.getTicketStatus()));
         ticket.setPriorityType(PriorityType.valueOf(ticketDto.getPriorityType()));
+        ticket.setAssignee(accountDtoResponseEntity.getBody().getId());
 
         // mysql kaydet
         ticket = ticketRepository.save(ticket);
@@ -49,6 +55,7 @@ public class TicketServiceImpl implements TicketService {
                 .description(ticket.getDescription())
                 .notes(ticket.getNotes())
                 .id(ticket.getId())
+                .assignee(accountDtoResponseEntity.getBody().getUsername())
                 .priorityType(ticket.getPriorityType().getLabel())
                 .ticketStatus(ticket.getTicketStatus().getLabel())
                 .ticketDate(ticket.getTicketDate()).build();

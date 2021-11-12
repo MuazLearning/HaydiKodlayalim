@@ -72,6 +72,12 @@
             <artifactId>spring-context</artifactId>
             <version>5.2.0.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.haydikodlayalim</groupId>
+            <artifactId>service-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
