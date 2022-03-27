@@ -9,6 +9,7 @@ import com.haydikodlayalim.ticketservice.model.TicketStatus;
 import com.haydikodlayalim.ticketservice.model.es.TicketModel;
 import com.haydikodlayalim.ticketservice.repository.TicketRepository;
 import com.haydikodlayalim.ticketservice.repository.es.TicketElasticRepository;
+import com.haydikodlayalim.ticketservice.service.TicketNotificationService;
 import com.haydikodlayalim.ticketservice.service.TicketService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -24,20 +25,18 @@ public class TicketServiceImpl implements TicketService {
 
     private final TicketElasticRepository ticketElasticRepository;
     private final TicketRepository ticketRepository;
-    private final ModelMapper modelMapper;
+    private final TicketNotificationService ticketNotificationService;
     private final AccountServiceClient accountServiceClient;
 
     @Override
     @Transactional
     public TicketDto save(TicketDto ticketDto) {
         // Ticket Entity
-        Ticket ticket = new Ticket();
-        //TODO Account API dan dogrula
-        // ticket.setAssignee();
-        ResponseEntity<AccountDto> accountDtoResponseEntity = accountServiceClient.get(ticketDto.getAssignee());
-
         if (ticketDto.getDescription() == null)
             throw new IllegalArgumentException("Description bos olamaz");
+
+        Ticket ticket = new Ticket();
+        ResponseEntity<AccountDto> accountDtoResponseEntity = accountServiceClient.get(ticketDto.getAssignee());
 
         ticket.setDescription(ticketDto.getDescription());
         ticket.setNotes(ticketDto.getNotes());
@@ -55,7 +54,7 @@ public class TicketServiceImpl implements TicketService {
                 .description(ticket.getDescription())
                 .notes(ticket.getNotes())
                 .id(ticket.getId())
-                .assignee(accountDtoResponseEntity.getBody().getUsername())
+                .assignee(accountDtoResponseEntity.getBody().getFullName())
                 .priorityType(ticket.getPriorityType().getLabel())
                 .ticketStatus(ticket.getTicketStatus().getLabel())
                 .ticketDate(ticket.getTicketDate()).build();
@@ -65,6 +64,9 @@ public class TicketServiceImpl implements TicketService {
 
         // olusan nesneyi döndür
         ticketDto.setId(ticket.getId());
+
+        // Kuyruga notification yaz
+        ticketNotificationService.sendToQueue(ticket);
         return ticketDto;
     }
 

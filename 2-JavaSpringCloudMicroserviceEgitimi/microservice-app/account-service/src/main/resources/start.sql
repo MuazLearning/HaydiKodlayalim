@@ -20,7 +20,6 @@ CREATE TABLE accounts(
                          surname text,
                          pwd text,
                          email text,
-                         birth_date date,
+                         birth_date timestamp,
                          created_at timestamp,
                          is_active boolean,
-);
