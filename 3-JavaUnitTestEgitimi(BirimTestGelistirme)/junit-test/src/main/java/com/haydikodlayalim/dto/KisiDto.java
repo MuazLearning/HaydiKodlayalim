@@ -1,7 +1,8 @@
 package com.haydikodlayalim.dto;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class KisiDto {

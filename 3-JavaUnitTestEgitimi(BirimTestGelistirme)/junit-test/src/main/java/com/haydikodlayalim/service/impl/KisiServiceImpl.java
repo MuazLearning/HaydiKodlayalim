@@ -6,15 +6,15 @@ import com.haydikodlayalim.entity.Kisi;
 import com.haydikodlayalim.repo.AdresRepository;
 import com.haydikodlayalim.repo.KisiRepository;
 import com.haydikodlayalim.service.KisiService;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -31,7 +31,7 @@ public class KisiServiceImpl implements KisiService {
         Kisi kisi = new Kisi();
         kisi.setAdi(kisiDto.getAdi());
         kisi.setSoyadi(kisiDto.getSoyadi());
-        final  Kisi kisiDb = kisiRepository.save(kisi);
+        final Kisi kisiDb = kisiRepository.save(kisi);
 
         List<Adres> liste = new ArrayList<>();
         kisiDto.getAdresler().forEach(item -> {
@@ -58,7 +58,7 @@ public class KisiServiceImpl implements KisiService {
         List<KisiDto> kisiDtos = new ArrayList<>();
 
         kisiler.forEach(it -> {
-            KisiDto kisiDto =new KisiDto();
+            KisiDto kisiDto = new KisiDto();
             kisiDto.setId(it.getId());
             kisiDto.setAdi(it.getAdi());
             kisiDto.setSoyadi(it.getSoyadi());
