@@ -18,6 +18,11 @@ target/
 *.iws
 *.iml
 *.ipr
+*.log
+.gradle
+classes
+dataSources
+.ideaDataSources 
 
 ### NetBeans ###
 /nbproject/private/
