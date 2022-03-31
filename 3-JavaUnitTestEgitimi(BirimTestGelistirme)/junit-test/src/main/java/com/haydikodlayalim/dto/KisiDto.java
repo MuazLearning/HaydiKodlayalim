@@ -1,5 +1,6 @@
 package com.haydikodlayalim.dto;
 
+import javax.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class KisiDto {
 
     private Long id;
 
+    @NotNull
     private String adi;
 
     private String soyadi;

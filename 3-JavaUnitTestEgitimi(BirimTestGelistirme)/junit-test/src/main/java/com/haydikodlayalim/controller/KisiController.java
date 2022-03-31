@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,7 @@ public class KisiController {
     private final KisiService kisiService;
 
     @PostMapping
-    public ResponseEntity<KisiDto> kaydet(@RequestBody KisiDto kisiDto) {
+    public ResponseEntity<KisiDto> kaydet(@Valid @RequestBody KisiDto kisiDto) {
         return ResponseEntity.ok(kisiService.save(kisiDto));
     }
 
