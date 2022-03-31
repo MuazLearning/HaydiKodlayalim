@@ -1,13 +1,20 @@
 package com.haydikodlayalim.dto;
 
+import javax.validation.constraints.NotNull;
+import lombok.*;
+
 import java.util.List;
-import lombok.Data;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@EqualsAndHashCode(of = {"id"})
 public class KisiDto {
 
     private Long id;
 
+    @NotNull
     private String adi;
 
     private String soyadi;
