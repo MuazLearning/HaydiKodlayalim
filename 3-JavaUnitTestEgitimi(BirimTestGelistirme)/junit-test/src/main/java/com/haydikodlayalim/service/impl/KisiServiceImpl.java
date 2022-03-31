@@ -11,6 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class KisiServiceImpl implements KisiService {
     @Override
     @Transactional
     public KisiDto save(KisiDto kisiDto) {
-        //Assert.isNull(kisiDto.getAdi(), "Adi alani zorunludur!");
+        Assert.notNull(kisiDto.getAdi(), "Adi alani zorunludur!");
 
         Kisi kisi = new Kisi();
         kisi.setAdi(kisiDto.getAdi());
@@ -62,8 +63,9 @@ public class KisiServiceImpl implements KisiService {
             kisiDto.setId(it.getId());
             kisiDto.setAdi(it.getAdi());
             kisiDto.setSoyadi(it.getSoyadi());
-            kisiDto.setAdresler(it.getAdresleri().stream().map(Adres::getAdres)
-                    .collect(Collectors.toList()));
+            kisiDto.setAdresler(it.getAdresleri() != null ?
+                    it.getAdresleri().stream().map(Adres::getAdres).collect(Collectors.toList())
+                    : null);
             kisiDtos.add(kisiDto);
         });
         return kisiDtos;

@@ -1,10 +1,14 @@
 package com.haydikodlayalim.dto;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@EqualsAndHashCode(of = {"id"})
 public class KisiDto {
 
     private Long id;
