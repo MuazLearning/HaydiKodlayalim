@@ -1,4 +1,4 @@
-package com.haydikodlayalim.dpatterns.singleton;
+package com.haydikodlayalim.dpatterns.d1_singleton;
 
 public class Main {
 
