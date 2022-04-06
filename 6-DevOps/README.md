@@ -1,6 +1,8 @@
 # Haydi Kodlayalım - DevOps
 
-docker-compose.yml dosyasının olduğu klasörün içinde bulunan kodların çalışmasını sağlayan kodlar.
+## Ders 2
+
+**docker-compose.yml dosyasının olduğu klasörün içinde bulunan kodların çalışmasını sağlayan kodlar.**
 
 ```shell
 docker-compose -f docker-compose.yml up -d
@@ -28,4 +30,24 @@ http://prometheus:9090/
 
 ```sql
 node_load1{instance="node-exporter:9100", job="node-exporter"}
+```
+
+
+## Ders 3
+
+**Veriyi kaybetmemek için bir alan açıyor**
+
+```shell
+docker volume create portainer_data
+```
+
+```shell
+docker run -d -p 8000:8000 -p 9000:9000 --name portainer \
+    --restart=always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v portainer_data:/data \
+    portainer/portainer
+    
+    docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer 
+# togg2023
 ```
