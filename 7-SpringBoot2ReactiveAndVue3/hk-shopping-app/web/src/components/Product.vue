@@ -2,7 +2,7 @@
   <div class="container shopping-cart">
     <div class="content">
       <div class="row">
-        <div class="col-md-12 col-lg-12" v-for='(item, index) in items' :key='index'>
+        <div class="col-md-12 col-lg-12" v-for='(item, index) in products' :key='index'>
           <div class="items">
             <div class="product">
               <div class="row">
@@ -17,7 +17,7 @@
                           <a class="product-name" href="#">{{ item.name }}</a>
                           <div class="product-info">
                             <div class="product-info-detail">{{ item.description }}</div>
-                            <div class="product-info-detail">Seller: <a class="value" href="#">{{ item.seller }}</a>
+                            <div class="product-info-detail">Seller: <a class="value" v-bind:href="item.seller.id">{{ item.seller.name }}</a>
                             </div>
                             <div class="product-info-detail"><span v-if="item.freeDelivery"> FREE </span>Delivery: <span
                                 class="value">{{ item.deliveryIn }}</span></div>
@@ -35,7 +35,7 @@
                       <input id="quantity" type="number" value="1" class="form-control quantity-input">
                     </div>
                     <div class="col-md-6 price">
-                      <span>{{ item.money }} {{ item.price }}</span>
+                      <span>{{ item.money }} {{ item.price }} {{ item.moneyType }}</span>
                     </div>
                   </div>
                 </div>
@@ -62,67 +62,25 @@
 </template>
 
 <script>
+import {get} from "@/common/api.service";
+
 export default {
   name: 'ProductVue',
   components: {},
-  computed: {
-    items() {
-      return [{
-        "id": "6252b730291f8571c402c53f",
-        "image": "https://productimages.hepsiburada.net/s/32/500/10352568139826.jpg",
-        "name": "Product Name9",
-        "description": "Product Description9",
-        "seller": {
-          "id": "18761d4e-e2ed-481d-85f9-2ea0f414fcbd",
-          "name": "Test Product"
-        },
-        "features": "<li>Black Color</li> <li>Aluminum Case</li> <li>2 Years Warranty</li> <li>5 Inch (35x55mm)</li>",
-        "available": 10,
-        "freeDelivery": true,
-        "deliveryIn": "Tomorrow",
-        "price": 10,
-        "category": "a2f2be91-c269-459b-8bff-221193daf3d9",
-        "moneyType": "USD"
-      },
-        {
-          'image': 'https://productimages.hepsiburada.net/s/32/500/10352568139826.jpg',
-          'name': 'Awesome Product 1',
-          'description': 'Product featured description',
-          'seller': 'Awesome Company 1',
-          'features': '<li>Black Color</li> <li>Aluminum Case</li> <li>2 Years Warranty</li> <li>5 Inch (35x55mm)</li>',
-          'available': 2,
-          'freeDelivery': true,
-          'deliveryIn': 'In 3 days',
-          'price': 120,
-          'money': '$'
-        },
-        {
-          'image': 'https://productimages.hepsiburada.net/s/32/500/10352568139826.jpg',
-          'name': 'Awesome Product 2',
-          'description': 'Product featured description',
-          'seller': 'Awesome Company 1',
-          'features': '<li>Black Color</li> <li>Aluminum Case</li> <li>2 Years Warranty</li> <li>5 Inch (35x55mm)</li>',
-          'available': 23,
-          'freeDelivery': false,
-          'deliveryIn': 'Tomorrow',
-          'price': 1550,
-          'money': 'TL'
-        },
-        {
-          'image': 'https://productimages.hepsiburada.net/s/32/500/10352568139826.jpg',
-          'name': 'Awesome Product 3',
-          'description': 'Product featured description',
-          'seller': 'Awesome Company 1',
-          'features': '<li>Black Color</li> <li>Aluminum Case</li> <li>2 Years Warranty</li> <li>5 Inch (35x55mm)</li>',
-          'available': 23,
-          'freeDelivery': false,
-          'deliveryIn': 'Tomorrow',
-          'price': 550,
-          'money': '€'
-        }
-      ];
+  data() {
+    return {products: []};
+  },
+  created() {
+    this.getProducts();
+  },
+  methods: {
+    getProducts: function () {
+      get('products').then(response => {
+        this.products = response.data;
+      });
+
     }
-  }
+  },
 }
 </script>
 

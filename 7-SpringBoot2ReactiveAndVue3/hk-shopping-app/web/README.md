@@ -29,3 +29,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### SASS
 `npm add sass sass-loader`
+
+### Axios
+`yarn add axios vue-axios`

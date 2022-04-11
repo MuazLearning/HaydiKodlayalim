@@ -25,7 +25,7 @@ public class ProductEsService {
                 .id(product.getId())
                 .name(product.getName())
                 .seller(CompanyEs.builder().id(product.getCompanyId())
-                        .name("Test Product").build()) // TODO: add seller name
+                        .name("Test Seller").build()) // TODO: add seller name
                 .category(CategoryEs.builder().id(product.getCategoryId())
                         .name("Test Category").build()) // TODO: add category name
                 .build());
