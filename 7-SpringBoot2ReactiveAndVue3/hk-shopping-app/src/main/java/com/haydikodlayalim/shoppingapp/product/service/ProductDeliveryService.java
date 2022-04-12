@@ -1,5 +1,6 @@
 package com.haydikodlayalim.shoppingapp.product.service;
 
+import com.haydikodlayalim.shoppingapp.product.domain.MoneyTypes;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -8,12 +9,12 @@ import java.math.BigDecimal;
 public class ProductDeliveryService {
 
     public String getDeliveryInfo(String productId) {
-        // TODO: Implement delivery info
+        // TODO
         return "Tomorrow";
     }
 
-    public Boolean freeDeliveryCheck(String productId, BigDecimal price) {
-        // TODO: Implement free delivery check
-        return price.compareTo(BigDecimal.ONE) > 0;
+    public boolean freeDeliveryCheck(String productId, BigDecimal price, MoneyTypes moneyType) {
+        // TODO
+        return true;
     }
 }

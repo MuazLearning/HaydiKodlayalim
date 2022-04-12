@@ -20,17 +20,19 @@ public class ProductEsService {
     private final CategoryService categoryService;
 
     public Mono<ProductEs> saveNewProduct(Product product) {
-        return productEsRepository.save(ProductEs.builder()
-                .active(product.getActive())
-                .code(product.getCode())
-                .description(product.getDescription())
-                .features(product.getFeatures())
-                .id(product.getId())
-                .name(product.getName())
-                .seller(CompanyEs.builder().id(product.getCompanyId())
-                        .name("Test Seller").build()) // TODO: add seller name
-                .category(getProductCategory(product.getCategoryId())) // TODO: add category name
-                .build());
+        return productEsRepository.save(
+                ProductEs.builder()
+                        .active(product.getActive())
+                        .code(product.getCode())
+                        .description(product.getDescription())
+                        .features(product.getFeatures())
+                        .id(product.getId())
+                        .price(product.getPrice())
+                        .name(product.getName())
+                        // TODO get company name and code
+                        .seller(CompanyEs.builder().id(product.getCompanyId()).name("Test").build())
+                        .category(getProductCategory(product.getCategoryId()))
+                        .build());
     }
 
     private CategoryEs getProductCategory(String categoryId) {

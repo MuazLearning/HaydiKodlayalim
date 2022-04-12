@@ -1,6 +1,5 @@
 package com.haydikodlayalim.shoppingapp.product.model.product;
 
-import com.haydikodlayalim.shoppingapp.product.domain.MoneyTypes;
 import com.haydikodlayalim.shoppingapp.product.model.ProductSellerResponse;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +19,6 @@ public class ProductResponse {
     private boolean freeDelivery;
     private String deliveryIn;
     private BigDecimal price;
-    private String category;
-    private MoneyTypes moneyType;
+    private String moneySymbol;
+    private String categoryId;
 }
