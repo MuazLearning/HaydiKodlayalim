@@ -17,7 +17,9 @@
                           <a class="product-name" href="#">{{ item.name }}</a>
                           <div class="product-info">
                             <div class="product-info-detail">{{ item.description }}</div>
-                            <div class="product-info-detail">Seller: <a class="value" v-bind:href="item.seller.id">{{ item.seller.name }}</a>
+                            <div class="product-info-detail">Seller: <a class="value" v-bind:href="item.seller.id">{{
+                                item.seller.name
+                              }}</a>
                             </div>
                             <div class="product-info-detail"><span v-if="item.freeDelivery"> FREE </span>Delivery: <span
                                 class="value">{{ item.deliveryIn }}</span></div>
@@ -35,7 +37,7 @@
                       <input id="quantity" type="number" value="1" class="form-control quantity-input">
                     </div>
                     <div class="col-md-6 price">
-                      <span>{{ item.money }} {{ item.price }}  {{item.moneySymbol}}</span>
+                      <span>{{ item.money }} {{ item.price }}  {{ item.moneySymbol }}</span>
                     </div>
                   </div>
                 </div>
@@ -44,7 +46,7 @@
                   <div class=""></div>
                   <div class="row align-items-end">
                     <div class="col-md-6">
-                      <button class="btn btn-primary">Add to Cart</button>
+                      <button class="btn btn-primary">Add to Basket</button>
                     </div>
                     <div class="col-md-6">
                       <button class="btn btn-success">Buy now</button>
@@ -62,25 +64,24 @@
 </template>
 
 <script>
-import {get} from "@/common/api.service";
+import {getAll} from "@/common/product.service";
 
 export default {
-  name: 'ProductVue',
+  name: 'ProductListComponent',
   components: {},
   data() {
-    return {products: []};
+    return {products: []}
   },
   created() {
     this.getProducts();
   },
   methods: {
-    getProducts: function () {
-      get('products').then(response => {
+    getProducts() {
+      getAll().then(response => {
         this.products = response.data;
-      });
-
+      })
     }
-  },
+  }
 }
 </script>
 
@@ -211,11 +212,13 @@ export default {
     padding-top: 25px;
     text-align: left;
   }
+
   .shopping-cart .items .product .info .price {
     font-weight: bold;
     font-size: 22px;
     top: 17px;
   }
+
   .shopping-cart .items .product .info .quantity {
     text-align: center;
   }

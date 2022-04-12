@@ -31,7 +31,7 @@ public class ProductDemoData {
         Long countOfData = productService.count().block();
         if (countOfData.equals(0L)) {
 
-            productEsRepository.deleteAll().block() ;
+            productEsRepository.deleteAll().block();
 
             CategoryResponse elektronik = categoryService.save(CategorySaveRequest.builder().name("Elektronik").build());
             CategoryResponse telefon = categoryService.save(CategorySaveRequest.builder().name("Cep Telefonu").build());
