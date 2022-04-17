@@ -9,6 +9,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 
 @Document(indexName = "product")
 @Getter
@@ -24,5 +25,6 @@ public class ProductEs {
     private String features;
     private CategoryEs category;
     private HashMap<MoneyTypes, BigDecimal> price;
+    private List<String> images;
     private Boolean active;
 }

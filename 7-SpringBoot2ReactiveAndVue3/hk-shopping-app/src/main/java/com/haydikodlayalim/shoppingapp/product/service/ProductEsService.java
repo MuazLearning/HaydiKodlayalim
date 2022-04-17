@@ -1,6 +1,7 @@
 package com.haydikodlayalim.shoppingapp.product.service;
 
 import com.haydikodlayalim.shoppingapp.product.domain.Product;
+import com.haydikodlayalim.shoppingapp.product.domain.ProductImage;
 import com.haydikodlayalim.shoppingapp.product.domain.category.Category;
 import com.haydikodlayalim.shoppingapp.product.domain.es.CategoryEs;
 import com.haydikodlayalim.shoppingapp.product.domain.es.CompanyEs;
@@ -11,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +35,9 @@ public class ProductEsService {
                         // TODO get company name and code
                         .seller(CompanyEs.builder().id(product.getCompanyId()).name("Test").build())
                         .category(getProductCategory(product.getCategoryId()))
+                        .images(product.getImage().stream()
+                                .map(ProductImage::getUrl)
+                                .collect(Collectors.toList()))
                         .build());
     }
 
