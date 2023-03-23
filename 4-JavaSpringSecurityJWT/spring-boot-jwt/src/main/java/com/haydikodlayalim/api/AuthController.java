@@ -2,7 +2,6 @@ package com.haydikodlayalim.api;
 
 import com.haydikodlayalim.auth.TokenManager;
 import com.haydikodlayalim.request.LoginRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,13 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/login")
-public class AuthConroller {
+public class AuthController {
 
-    @Autowired
-    private TokenManager tokenManager;
+    private final TokenManager tokenManager;
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
+
+    public AuthController(TokenManager tokenManager, AuthenticationManager authenticationManager) {
+        this.tokenManager = tokenManager;
+        this.authenticationManager = authenticationManager;
+    }
 
     @PostMapping
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
